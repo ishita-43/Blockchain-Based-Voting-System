@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himachal Pradesh Online Voting System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body class="bg-gray-100">
+    <div class="info flex items-center justify-center ml-6 mr-6 mb-16">
+    <div class="bg-white mt-6 pt-0 pl-8 pr-8 pb-8 rounded-lg `shadow-lg w-full items-center justify-center">
+        <header class="mt-3">
+            <h1 class="text-3xl font-bold mb-6 text-center mt-2 bg-black">Himachal Pradesh Online Voting System</h1>
+        </header>
+        <h2 class="text-center"><br>Election Date: June 1st<br></h2>
+        <h3 class="text-center text-semibold "><br>Select Your Candidate<br></h3>
+        <form action="submit_vote.php" method="post">
+            <ul class="list-disc pl-5 ">
+                <li><br><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Anurag Singh Thakur">  Anurag Singh Thakur</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Arun Ankesh Syal">  Arun Ankesh Syal  </label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Garib Dass Katoch">  Garib Dass Katoch</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Gopi Chand Attari">  Gopi Chand Attari</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Hem Raj">  Hem Raj</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Jagdeep Kumar">  Jagdeep Kumar</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Nand Lal">  Nand Lal</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Ramesh Chand Sarthi">  Ramesh Chand Sarthi</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Satpal Raizada">  Satpal Raizada</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Subedar Major Kulwant Singh Patial">  Subedar Major Kulwant Singh Patial</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Sumit Rana">  Sumit Rana</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]" value="Surender Kumar Gautam">  Surender Kumar Gautam</label></li>
+                <li><label class="block text-gray-700 text-m font-bold mb-2 ml-2 text-center"><input type="checkbox" name="items[]"value="NOTA">  NOTA</label></li>
+            </ul>
+            <div class=" flex justify-between items-center ml-50 mb-50 pb-90">
+            <a href="index.html" class="btn hover:bg-blue-700 text-white font-base py-2 px-4 rounded">Go to Home</a>
+            <button type="submit" class="btn hover:bg-blue-700 text-white font-base py-2 px-4 rounded">Submit Vote</button>
+        </div>
+        </form>
+    </div>
+</div>
+    <footer class="bottom fixed ml-5 ">@2024 Himachal Pradesh</footer>
+</body>
+</html>
