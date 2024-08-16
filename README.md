@@ -44,19 +44,19 @@ npm install
 
 Compile the smart contracts:
 
-bash
-Copy code
+```bash
 truffle compile
+```
 Migrate the smart contracts to the local blockchain:
 
-bash
-Copy code
+```bash
 truffle migrate
+```
 Run the development server:
 
-bash
-Copy code
+```bash
 npm start
+```
 Open the application in your browser:
 
 Navigate to http://localhost:3000 to view the app.
@@ -66,17 +66,17 @@ We welcome contributions from the community! To get started, please follow these
 
 Fork the repository on GitHub.
 Create a new branch for your feature or bugfix.
-bash
-Copy code
+```bash
 git checkout -b feature/your-feature-name
+```
 Commit your changes with clear and descriptive messages.
-bash
-Copy code
+```bash
 git commit -m "Add feature/your-feature-name"
+```
 Push your branch to GitHub.
-bash
-Copy code
+```bash
 git push origin feature/your-feature-name
+```
 Create a Pull Request against the main branch of this repository.
 Contribution Guidelines
 Ensure your code adheres to the project's coding standards.
