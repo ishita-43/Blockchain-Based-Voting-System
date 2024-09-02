@@ -5,7 +5,7 @@ Welcome to the Blockchain-Based Voting System project! This repository is part o
 The Blockchain-Based Voting System is designed to provide a decentralized, tamper-proof method for conducting elections. By utilizing blockchain technology, this system ensures that votes are recorded transparently and immutably, preventing fraud and enhancing trust in the voting process.
 
 # Features
-`Decentralization:` Votes are recorded on a distributed ledger, eliminating the need for a central authority.
+Decentralization: Votes are recorded on a distributed ledger, eliminating the need for a central authority.
 Transparency: All votes are visible on the blockchain, ensuring transparency.
 Security: Blockchain's cryptographic features ensure that votes cannot be altered once they are recorded.
 Anonymity: Voter identity is kept confidential, ensuring privacy.
@@ -22,18 +22,16 @@ Getting Started
 Prerequisites
 Before you begin, ensure you have the following installed:
 
-Node.js
 Truffle
 Ganache
-Metamask
 Git
 Installation
 Clone the repository:
 
 ```bash
 Copy code
-git clone https://github.com/ishita-43/Blockchain-Based-Voting-System.git
-cd Blockchain-Based-Voting-System
+git clone https://github.com/ishita-43/Voting-Portal.git
+cd Voting-Portal
 ```
 
 Install dependencies:
@@ -89,5 +87,5 @@ If you find any bugs or have feature requests, please open an issue on GitHub. B
 # Contact
 For any questions or discussions, feel free to join the Winter of Blockchain 2024 Discord server or reach out to the project maintainer:
 
-Ishita - GitHub
+Ishita- GitHub (https://github.com/ishita-43) 
 We look forward to your contributions and hope you enjoy working on this project! 🤗
