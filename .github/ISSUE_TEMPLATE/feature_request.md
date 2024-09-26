@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: enhancement, Level2, wob24
+labels: enhancement, Level3, wob24
 assignees: ''
 
 ---

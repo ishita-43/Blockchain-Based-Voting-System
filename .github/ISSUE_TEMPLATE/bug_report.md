@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: ''
-labels: bug, Level1
+labels: bug, Level2, wob24
 assignees: ''
 
 ---
