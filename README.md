@@ -30,8 +30,8 @@ Clone the repository:
 
 ```bash
 Copy code
-git clone https://github.com/ishita-43/Voting-Portal.git
-cd Voting-Portal
+git clone https://github.com/ishita-43/Blockchain-Based-Voting-System.git
+cd Blockchain-Based-Voting-System
 ```
 
 Install dependencies:
