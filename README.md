@@ -5,27 +5,25 @@ Welcome to the Blockchain-Based Voting System project! This repository is part o
 The Blockchain-Based Voting System is designed to provide a decentralized, tamper-proof method for conducting elections. By utilizing blockchain technology, this system ensures that votes are recorded transparently and immutably, preventing fraud and enhancing trust in the voting process.
 
 # Features
-Decentralization: Votes are recorded on a distributed ledger, eliminating the need for a central authority.
-Transparency: All votes are visible on the blockchain, ensuring transparency.
-Security: Blockchain's cryptographic features ensure that votes cannot be altered once they are recorded.
-Anonymity: Voter identity is kept confidential, ensuring privacy.
-Scalability: The system is designed to handle large-scale elections efficiently.
-Tech Stack
-Backend: Solidity (Smart Contracts)
-Blockchain Platform: Ethereum
-Frontend: React.js
-Database: IPFS (InterPlanetary File System)
-Development Tools: Truffle, Ganache
-Testing: Mocha, Chai
-Version Control: Git
-Getting Started
-Prerequisites
-Before you begin, ensure you have the following installed:
+Decentralization: Votes are recorded on a distributed ledger, eliminating the need for a central authority.   
+Transparency: All votes are visible on the blockchain, ensuring transparency.   
+Security: Blockchain's cryptographic features ensure that votes cannot be altered once they are recorded.   
+Anonymity: Voter identity is kept confidential, ensuring privacy.   
+Scalability: The system is designed to handle large-scale elections efficiently.   
+## Tech Stack
+Backend: Solidity (Smart Contracts)   
+Blockchain Platform: Ethereum   
+Frontend: React.js   
+Database: IPFS (InterPlanetary File System)   
+Development and Testing: Foundry   
+Version Control: Git   
 
-Truffle
-Ganache
-Git
-Installation
+## Getting Started   
+### Prerequisites
+Before you begin, ensure you have the following installed:   
+Foundry   
+Git   
+### Installation   
 Clone the repository:
 
 ```bash
@@ -40,15 +38,16 @@ Install dependencies:
 npm install
 ```
 
-Compile the smart contracts:
+Compile the smart contracts:   
 
+More info in Readme of Foundry_Contracts: 
 ```bash
-truffle compile
+forge compile
 ```
-Migrate the smart contracts to the local blockchain:
+Deploy contracts to local Blockchain (Anvil):
 
 ```bash
-truffle migrate
+forge script script/Deploy.s.sol --fork-url http://localhost:8545 --private-key <PRIVATE_KEY> --broadcast
 ```
 Run the development server:
 
