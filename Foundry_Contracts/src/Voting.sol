@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.27;
 
 contract Voting{
 
@@ -22,14 +22,21 @@ mapping(address => Voter) public voters;
 Candidate[] public candidates;
 uint public totalVotes;
 
-modifier ownerOnly(){
- require(msg.sender == owner, "Caller is not owner");
- _;
-}
 
 constructor(string memory _name) {
   owner = msg.sender;
   electionName = _name;
+}
+
+error Voting__NotOwner();
+error Voting__AlreadyVoted();
+error Voting__NotAuthorized();
+error Voting__IncorrectVoteIndex();
+
+
+modifier ownerOnly(){
+ require(msg.sender == owner, Voting__NotOwner());
+ _;
 }
 
 function addCandidate(string memory _name) public ownerOnly{
@@ -41,9 +48,9 @@ function authorize(address _person) public ownerOnly {
 }
 
 function vote(uint _voteIndex) public {
-  require(!voters[msg.sender].voted, "You have already voted");
-  require(voters[msg.sender].authorized, "You are not authorized to vote");
-  require(_voteIndex<candidates.length, "Incorrect Vote Index");
+  require(!voters[msg.sender].voted, Voting__AlreadyVoted());
+  require(voters[msg.sender].authorized, Voting__NotAuthorized());
+  require(_voteIndex<candidates.length, Voting__IncorrectVoteIndex());
   voters[msg.sender].vote = _voteIndex;
   voters[msg.sender].voted = true;
   candidates[_voteIndex].voteCount += 1;
