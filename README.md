@@ -27,21 +27,15 @@ Git
 Clone the repository:
 
 ```bash
-Copy code
 git clone https://github.com/ishita-43/Blockchain-Based-Voting-System.git
 cd Blockchain-Based-Voting-System
-```
-
-Install dependencies:
-
-```bash
-npm install
 ```
 
 Compile the smart contracts:   
 
 More info in Readme of Foundry_Contracts: 
 ```bash
+cd Foundry_Contracts/
 forge compile
 ```
 Deploy contracts to local Blockchain (Anvil):
@@ -49,10 +43,16 @@ Deploy contracts to local Blockchain (Anvil):
 ```bash
 forge script script/Deploy.s.sol:DeployWithData --fork-url http://localhost:8545 --private-key <PRIVATE_KEY> --broadcast
 ```
-Run the development server:
+
+Install dependencies in frontend folder:
 
 ```bash
-npm start
+cd frontend/
+npm install
+```
+Run the app:
+```bash
+npm run dev
 ```
 Open the application in your browser:
 
