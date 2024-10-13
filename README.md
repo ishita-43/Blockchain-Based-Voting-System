@@ -47,7 +47,7 @@ forge compile
 Deploy contracts to local Blockchain (Anvil):
 
 ```bash
-forge script script/Deploy.s.sol --fork-url http://localhost:8545 --private-key <PRIVATE_KEY> --broadcast
+forge script script/Deploy.s.sol:DeployWithData --fork-url http://localhost:8545 --private-key <PRIVATE_KEY> --broadcast
 ```
 Run the development server:
 

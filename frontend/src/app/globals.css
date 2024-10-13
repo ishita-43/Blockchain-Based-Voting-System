@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+h1, h2, h3 {
+    font-family: 'Lexend', sans-serif;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #0056b3;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #1d4ed8;
+}
+
+.alarm {
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: tomato;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+footer {
+    background-color: #fff;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Header section styling */
+header {
+    width: 100%;
+    background-color: #333; /* Dark background color for the header */
+    padding: 1rem 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a slight shadow to the header */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Transparent or slightly grey background for the nav */
+}
+
+/* Navigation list styling */
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation list items styling */
+ul li {
+    margin: 0 20px;
+}
+
+/* Navigation links styling */
+ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white; /* White text color for the nav links */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 8px;
+}
+
+/* Hover effect for navigation links */
+ul li a:hover {
+    color: #00d7ff; /* Light blue color when hovering */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+}
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation list items styling */
+ol li {
+    margin: 0 20px;
+}
+
+/* Navigation links styling */
+ol li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white; /* White text color for the nav links */
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 8px;
+}
+
+/* Hover effect for navigation links */
+ol li a:hover {
+    color: #00d7ff; /* Light blue color when hovering */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        margin: 10px 0;
+    }
+}
+
+.results-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.results-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.total-votes {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.total-votes span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.candidates-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.candidate-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+.candidate-item:hover {
+    background-color: #f1f1f1;
+}
+
+.candidate-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.candidate-votes {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.no-data {
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+}

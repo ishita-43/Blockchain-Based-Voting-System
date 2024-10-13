@@ -48,7 +48,7 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/Deploy.s.sol --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/Deploy.s.sol:DeployWithData --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 
 ### Cast
