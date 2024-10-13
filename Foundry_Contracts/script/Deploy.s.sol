@@ -37,7 +37,7 @@ contract DeployWithData is Script {
         voting.addCandidate("Sumit Rana");
         voting.addCandidate("Surender Kumar Gautam");
         voting.addCandidate("NOTA");
-        voting.authorize(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
+        // voting.authorize(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
         vm.stopBroadcast();
         console.log(voting.owner());
         return (voting);
