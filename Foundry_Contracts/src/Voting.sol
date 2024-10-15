@@ -53,7 +53,7 @@ function authorize(address _person) public ownerOnly {
     voters[_person].authorized = true;
 }
 
-function vote(uint _voteIndex) public {
+function vote(uint _voteIndex) public electionOngoing(){
   require(!voters[msg.sender].voted, Voting__AlreadyVoted());
   require(voters[msg.sender].authorized, Voting__NotAuthorized());
   require(_voteIndex<candidates.length, Voting__IncorrectVoteIndex());
