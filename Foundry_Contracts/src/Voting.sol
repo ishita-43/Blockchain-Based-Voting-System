@@ -17,6 +17,7 @@ struct Candidate{
 
 address public owner;
 string public electionName;
+bool public electionEnded = false;
 
 mapping(address => Voter) public voters;
 Candidate[] public candidates;
@@ -39,6 +40,11 @@ modifier ownerOnly(){
  _;
 }
 
+modifier electionOngoing() {
+    require(!electionEnded, "Election has ended");
+    _;
+}
+
 function addCandidate(string memory _name) public ownerOnly{
   candidates.push(Candidate(candidates.length, _name, 0));
 }
@@ -56,6 +62,10 @@ function vote(uint _voteIndex) public {
   candidates[_voteIndex].voteCount += 1;
   totalVotes +=1;
 }
+
+function endElection() public ownerOnly { 
+        electionEnded = true;
+    }
 
 function getCandidates() public view returns (Candidate[] memory) {
   return candidates;
