@@ -5,8 +5,8 @@ contract Voting{
 
 struct Voter{
   bool voted;
-  uint vote;
   bool authorized;
+  uint vote;
  }
 
 struct Candidate{
@@ -40,23 +40,39 @@ modifier ownerOnly(){
  _;
 }
 
+
 modifier electionOngoing() {
     require(!electionEnded, "Election has ended");
     _;
 }
 
-function addCandidate(string memory _name) public ownerOnly{
-  candidates.push(Candidate(candidates.length, _name, 0));
+function addCandidate(string memory _name) public ownerOnly {
+    // Check if a candidate with the same name already exists
+    for (uint i = 0; i < candidates.length; i++) {
+        require(
+            keccak256(abi.encodePacked(candidates[i].name)) != keccak256(abi.encodePacked(_name)),
+            "Candidate already exists"
+        );
+    }
+
+    // Add the new candidate if no duplicate is found
+    candidates.push(Candidate(candidates.length, _name, 0));
 }
+
 
 function authorize(address _person) public ownerOnly {
-    voters[_person].authorized = true;
+  // check if voter is already authorised
+   require(!voters[_person].authorized, "Voter is already authorized");
+
+  voters[_person].authorized = true;
 }
 
-function vote(uint _voteIndex) public electionOngoing(){
+
+function vote(uint _voteIndex) public electionOngoing() {
   require(!voters[msg.sender].voted, Voting__AlreadyVoted());
   require(voters[msg.sender].authorized, Voting__NotAuthorized());
   require(_voteIndex<candidates.length, Voting__IncorrectVoteIndex());
+  
   voters[msg.sender].vote = _voteIndex;
   voters[msg.sender].voted = true;
   candidates[_voteIndex].voteCount += 1;
