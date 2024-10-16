@@ -46,6 +46,10 @@ modifier electionOngoing() {
     _;
 }
 
+receive() external payable {
+        revert("This contract does not accept Ether");
+    }
+
 function addCandidate(string memory _name) public ownerOnly {
     // Check if a candidate with the same name already exists
     for (uint i = 0; i < candidates.length; i++) {
