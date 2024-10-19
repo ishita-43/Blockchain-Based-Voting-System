@@ -21,8 +21,6 @@ bool public electionEnded = false;
 
 mapping(address => Voter) public voters;
 Candidate[] public candidates;
-uint public totalVotes;
-
 
 constructor(string memory _name) {
   owner = msg.sender;
@@ -51,8 +49,11 @@ receive() external payable {
     }
 
 function addCandidate(string memory _name) public ownerOnly {
+    // Store the length of candidates in a local variable
+    uint256 candidateCount = candidates.length;
+
     // Check if a candidate with the same name already exists
-    for (uint i = 0; i < candidates.length; i++) {
+    for (uint i = 0; i < candidateCount; i++) {
         require(
             keccak256(abi.encodePacked(candidates[i].name)) != keccak256(abi.encodePacked(_name)),
             "Candidate already exists"
@@ -60,8 +61,9 @@ function addCandidate(string memory _name) public ownerOnly {
     }
 
     // Add the new candidate if no duplicate is found
-    candidates.push(Candidate(candidates.length, _name, 0));
+    candidates.push(Candidate(candidateCount, _name, 0));
 }
+
 
 
 function authorize(address _person) public ownerOnly {
@@ -71,7 +73,6 @@ function authorize(address _person) public ownerOnly {
   voters[_person].authorized = true;
 }
 
-
 function vote(uint _voteIndex) public electionOngoing() {
   require(!voters[msg.sender].voted, Voting__AlreadyVoted());
   require(voters[msg.sender].authorized, Voting__NotAuthorized());
@@ -80,7 +81,6 @@ function vote(uint _voteIndex) public electionOngoing() {
   voters[msg.sender].vote = _voteIndex;
   voters[msg.sender].voted = true;
   candidates[_voteIndex].voteCount += 1;
-  totalVotes +=1;
 }
 
 function endElection() public ownerOnly { 
@@ -92,7 +92,11 @@ function getCandidates() public view returns (Candidate[] memory) {
 }
 
 function getTotalVotes() public view returns (uint) {
-  return totalVotes;
+    uint total = 0;
+    for (uint i = 0; i < candidates.length; i++) {
+        total += candidates[i].voteCount;
+    }
+    return total;
 }
 
 }
