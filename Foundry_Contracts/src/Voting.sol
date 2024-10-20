@@ -71,7 +71,7 @@ contract Voting {
     }
 
     function authorize(address _person) public ownerOnly {
-        // check if voter is already authorised
+        // Check if voter is already authorized
         require(!voters[_person].authorized, "Voter is already authorized");
 
         voters[_person].authorized = true;
@@ -80,7 +80,7 @@ contract Voting {
         emit VoterAuthorized(_person);
     }
 
-    function vote(uint _voteIndex) public electionOngoing() {
+    function vote(uint _voteIndex) public electionOngoing {
         require(!voters[msg.sender].voted, Voting__AlreadyVoted());
         require(voters[msg.sender].authorized, Voting__NotAuthorized());
         require(_voteIndex < candidates.length, Voting__IncorrectVoteIndex());
